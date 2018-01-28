@@ -3,6 +3,8 @@
 #include "measurement.h"
 using namespace std;
 
+class EmptyException{};
+
 class Stack
 {
     public:
