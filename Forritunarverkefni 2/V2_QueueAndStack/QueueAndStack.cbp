@@ -31,8 +31,13 @@
 		<Compiler>
 			<Add option="-Wall" />
 		</Compiler>
+		<Unit filename="Node.h" />
 		<Unit filename="main.cpp" />
 		<Unit filename="measurement.h" />
+		<Unit filename="queue.cpp" />
+		<Unit filename="queue.h" />
+		<Unit filename="stack.cpp" />
+		<Unit filename="stack.h" />
 		<Extensions>
 			<code_completion />
 			<envvars />
