@@ -79,6 +79,7 @@ ostream& operator <<(ostream &out, const Queue& que)
             out << node->_data << " ";
             node = node->_next;
         }
+        delete node;
         return out;
 
 }
