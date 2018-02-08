@@ -16,29 +16,38 @@ class DoublyLinkedList {
         DoublyLinkedList() {
 
             size = 0;
-            head = new ListNode();
-            tail = new ListNode();
+            head = new ListNode<T>();
+            tail = new ListNode<T>();
 
             head->next = tail;
             tail->prev = head;
-            currNode = head;
+            currNode = tail;
             currentPosition = 0;
         }
 
         ~DoublyLinkedList() {
 
-            ///TODO: Implement
+            clear();
+
+            delete head;
+            delete tail;
         }
 
         // Clear contents from the list, to make it empty.
         // Worst-case time complexity: Linear
         void clear() {
 
-            for(int i = 0; i < size; i++)
+            currNode = head->next;
+
+            while(currNode->next != tail)
             {
+                head->next = currNode->next;
                 delete currNode;
+                currNode = head->next;
             }
+            tail->prev = head;
             size = 0;
+            currentPosition = 0;
         }
 
         // Insert an element at the current location.
@@ -46,17 +55,17 @@ class DoublyLinkedList {
         // Worst-case time complexity: Constant
         void insert(const T& item) {
 
-            if(currentPosition == 0)
+            if(currNode->prev == head)
             {
-                ListNode<T> *node = new ListNode<T>(item, head, tail);
-                head->next = node;
-                tail->prev = node;
+                ListNode<T> *newNode = new ListNode<T>(item, head, tail);
+                head->next = newNode;
+                tail->prev = newNode;
             }
             else
             {
-                ListNode<T> *node = new ListNode<T>(item, currNode->prev, currNode);
-                currNode->prev->next = node;
-                currNode->prev = node;
+                ListNode<T> *newNode = new ListNode<T>(item, currNode->prev, currNode);
+                currNode->prev->next = newNode;
+                currNode->prev = newNode;
             }
             size++;
         }
@@ -68,17 +77,16 @@ class DoublyLinkedList {
 
             if(size == 0)
             {
-                ListNode<T> *node = new ListNode<T>(item, head, tail);
-                head->next = node;
-                tail->prev = node;
-                currNode = node;
+                ListNode<T> *newNode = new ListNode<T>(item, head, tail);
+                head->next = newNode;
+                tail->prev = newNode;
             }
             else
             {
-                ListNode<T> *node = new ListNode<T>(item, tail->prev, tail);
-                tail->prev->next = node;
-                tail->prev = node;
-                currNode = node;
+                ListNode<T> *newNode = new ListNode<T>(item, tail->prev, tail);
+                tail->prev->next = newNode;
+                tail->prev = newNode;
+                currNode = newNode;
             }
             size++;
         }
@@ -90,24 +98,25 @@ class DoublyLinkedList {
         // behind the last element
         T remove() {
 
-            //ListNode<T> *node = new ListNode<T>(item, tail.prev, tail);
-            //currentNode =
+            T temp;
+            temp = currNode.data;
+            currNode = currNode->prev;
 
-            ///TODO: Implement
-            ///remember to return a value
+            return temp;
+
         }
 
         // Set the current position to the start of the list
         // Worst-case time complexity: Constant
         void move_to_start() {
-
+            currNode = head->next;
             currentPosition = 1;
         }
 
         // Set the current position to the end of the list
         // Worst-case time complexity: Constant
         void move_to_end() {
-
+            currNode = tail;
             currentPosition = size;
         }
 
@@ -118,6 +127,7 @@ class DoublyLinkedList {
 
             if(currentPosition > 0)
             {
+                currNode = currNode->prev;
                 currentPosition--;
             }
         }
@@ -133,6 +143,7 @@ class DoublyLinkedList {
             }
             else
             {
+                currNode = currNode->next;
                 currentPosition++;
             }
         }
