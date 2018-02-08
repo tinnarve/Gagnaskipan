@@ -14,6 +14,9 @@ Queue::~Queue()
         head = node;
         node = node->_next;
         delete head;
+        head = NULL;
+        delete tail;
+        tail = NULL;
     }
 }
 
@@ -25,9 +28,10 @@ void Queue::add(Measurement data)
         tail = node;
         head = node;
     }
-    else
-    {
+    else{
+
         Node *node = new Node(data, NULL);
+
         tail->_next = node;
         tail = node;
     }
@@ -75,7 +79,6 @@ ostream& operator <<(ostream &out, const Queue& que)
             out << node->_data << " ";
             node = node->_next;
         }
-        delete node;
         return out;
 
 }

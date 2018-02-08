@@ -4,7 +4,7 @@
 	"stack.h"
 	"queue.h"
 
-1517265046 c:\users\lenovo\desktop\gagnaskipan\forritunarverkefni 2\v2_queueandstack\stack.h
+1517266855 c:\users\lenovo\desktop\gagnaskipan\forritunarverkefni 2\v2_queueandstack\stack.h
 	"measurement.h"
 	"Node.h"
 	<iostream>
@@ -16,14 +16,14 @@
 1517263913 c:\users\lenovo\desktop\gagnaskipan\forritunarverkefni 2\v2_queueandstack\node.h
 	"measurement.h"
 
-1517263559 c:\users\lenovo\desktop\gagnaskipan\forritunarverkefni 2\v2_queueandstack\queue.h
+1517266945 c:\users\lenovo\desktop\gagnaskipan\forritunarverkefni 2\v2_queueandstack\queue.h
 	"measurement.h"
 	"Node.h"
 
-1517263561 source:c:\users\lenovo\desktop\gagnaskipan\forritunarverkefni 2\v2_queueandstack\queue.cpp
+1517266415 source:c:\users\lenovo\desktop\gagnaskipan\forritunarverkefni 2\v2_queueandstack\queue.cpp
 	"queue.h"
 
-1517264283 source:c:\users\lenovo\desktop\gagnaskipan\forritunarverkefni 2\v2_queueandstack\stack.cpp
+1517266544 source:c:\users\lenovo\desktop\gagnaskipan\forritunarverkefni 2\v2_queueandstack\stack.cpp
 	"stack.h"
 
 1517265449 source:c:\users\tinna\documents\gagnaskipan\forritunarverkefni 2\v2_queueandstack\main.cpp

@@ -15,6 +15,9 @@ Stack::~Stack()
         head = node;
         node = node->_next;
         delete head;
+        head = NULL;
+        delete tail;
+        tail = NULL;
     }
 }
 
@@ -32,7 +35,6 @@ void Stack::push(Measurement data)
         temp ->_data = data;
         temp ->_next = head;
         head = temp;
-
     }
     stack_counter++;
 
@@ -56,6 +58,45 @@ Measurement Stack::pop()
 
         return node->_data;
     }
+
+    /*if(isEmpty())
+    {
+        throw EmptyException();
+    }
+    else
+    {
+        if (head->_next == NULL) {
+            Measurement m = head->_data;
+            delete head;
+            head = NULL;
+        }
+        else {
+            Measurement m = tail->_data;
+            Node *prevTail = head;
+            Node *tail2 = head->_next;
+            while (tail2->_next != NULL) {
+                prevTail = tail2;
+                tail2 = tail2->_next;
+            }
+            delete tail2;
+            prevTail->_next = NULL;
+            return m;
+        Measurement m = tail->_data;
+        Node* temp_node = tail->_next;
+        delete tail;
+        tail = temp_node;
+        return m;
+        Node *node = tail->_next;
+        tail = NULL;
+
+        if(head == NULL)
+        {
+            tail = NULL;
+        }
+        stack_counter--;
+
+        return node->_data;
+    }*/
 }
 int Stack::size()
 {
@@ -78,6 +119,5 @@ ostream& operator <<(ostream &out, const Stack& s)
             out << node->_data << " ";
             node = node->_next;
         }
-        delete node;
         return out;
 }
