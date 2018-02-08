@@ -13,7 +13,7 @@ int main() {
     stringList.append("sdf");
     stringList.append("wet");
     stringList.append("fgh");
- /*   stringList.move_to_pos(2);
+    stringList.move_to_pos(2);
     cout << stringList << endl;
     stringList.clear();
     stringList.insert("pod");
@@ -63,6 +63,6 @@ int main() {
     intList.move_to_start();
     intList.insert(7);
     cout << intList << endl;
-*/
+
 }
 

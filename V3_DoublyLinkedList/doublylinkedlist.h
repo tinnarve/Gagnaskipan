@@ -39,7 +39,7 @@ class DoublyLinkedList {
 
             currNode = head->next;
 
-            while(currNode->next != tail)
+            while(currNode != tail)
             {
                 head->next = currNode->next;
                 delete currNode;
@@ -55,7 +55,7 @@ class DoublyLinkedList {
         // Worst-case time complexity: Constant
         void insert(const T& item) {
 
-            if(currNode->prev == head)
+            if(currentPosition == 0)
             {
                 ListNode<T> *newNode = new ListNode<T>(item, head, tail);
                 head->next = newNode;
@@ -68,6 +68,7 @@ class DoublyLinkedList {
                 currNode->prev = newNode;
             }
             size++;
+            currentPosition++;
         }
 
         // Append an element at the end of the list.
@@ -89,6 +90,7 @@ class DoublyLinkedList {
                 currNode = newNode;
             }
             size++;
+            currentPosition++;
         }
 
         // Remove and return the current element.
@@ -98,9 +100,22 @@ class DoublyLinkedList {
         // behind the last element
         T remove() {
 
+            if(currNode == tail)
+            {
+                throw InvalidPositionException();
+            }
+
             T temp;
-            temp = currNode.data;
-            currNode = currNode->prev;
+            temp = currNode->data;
+
+            ListNode<T> *tempNode = currNode->prev;
+            tempNode->next = currNode->next;
+            currNode->next->prev = tempNode;
+            delete currNode;
+            currNode = tempNode->next;
+
+            currentPosition--;
+            size--;
 
             return temp;
 
@@ -124,8 +139,7 @@ class DoublyLinkedList {
         // if already at beginning.
         // Worst-case time complexity: Constant
         void prev() {
-
-            if(currentPosition > 0)
+            if(currNode != head->next)
             {
                 currNode = currNode->prev;
                 currentPosition--;
@@ -137,11 +151,7 @@ class DoublyLinkedList {
         // Worst-case time complexity: Constant
         void next() {
 
-            if(currentPosition == size)
-            {
-
-            }
-            else
+            if(currentPosition != size && currentPosition < 0)
             {
                 currNode = currNode->next;
                 currentPosition++;
@@ -168,7 +178,20 @@ class DoublyLinkedList {
         // Throws InvalidPositionException if 'pos' is not a valid position
         void move_to_pos(int pos) {
 
-            ///TODO: Implement
+            if(pos >= size)
+            {
+                throw InvalidPositionException();
+            }
+            else
+            {
+                currNode = head->next;
+                for(int i = 1; i < pos; i++)
+                {
+                    currNode = currNode->next;
+                }
+                currentPosition = pos;
+            }
+
         }
 
         // Return: The current element.
@@ -176,9 +199,14 @@ class DoublyLinkedList {
         // Throws InvalidPositionException if current position is
         // behind the last element
         const T& get_value() const {
-
-            ///TODO: Implement
-            ///remember to return a value
+            if(currentPosition >= size)
+            {
+                throw InvalidPositionException();
+            }
+            else
+            {
+                return currNode->data;
+            }
         }
 
 
@@ -186,7 +214,11 @@ class DoublyLinkedList {
         // by a single space.
         friend ostream& operator <<(ostream& outs, const DoublyLinkedList& lis) {
 
-            ///TODO: Implement
+            ListNode<T> *tmpNode = lis.head->next;
+            while(tmpNode != lis.tail) {
+                outs << tmpNode->data << " ";
+                tmpNode = tmpNode->next;
+            }
             return outs;
         }
 
