@@ -35,3 +35,13 @@
 
 1518100493 c:\users\lenovo\desktop\gagnaskipan\v3_doublylinkedlist\listnode.h
 
+1518116976 source:c:\users\tinna\documents\gagnaskipan\v3_doublylinkedlist\main.cpp
+	<iostream>
+	"doublylinkedlist.h"
+
+1518116976 c:\users\tinna\documents\gagnaskipan\v3_doublylinkedlist\doublylinkedlist.h
+	<iostream>
+	"listnode.h"
+
+1518111488 c:\users\tinna\documents\gagnaskipan\v3_doublylinkedlist\listnode.h
+
