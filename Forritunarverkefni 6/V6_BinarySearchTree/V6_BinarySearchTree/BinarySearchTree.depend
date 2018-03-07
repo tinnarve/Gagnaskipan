@@ -43,3 +43,18 @@
 	"map.h"
 	"BinaryTreeNode.h"
 
+1520449644 source:c:\users\tinna\onedrive - reykjavik university\háskólinn í reykjavík\tölvunarfræði bsc\20181\t-201-gski gagnaskipan\verkefni\forritunarverkefni 6\v6_binarysearchtree\v6_binarysearchtree\main.cpp
+	<iostream>
+	<string>
+	"BSTMap2.h"
+
+1520449644 c:\users\tinna\onedrive - reykjavik university\háskólinn í reykjavík\tölvunarfræði bsc\20181\t-201-gski gagnaskipan\verkefni\forritunarverkefni 6\v6_binarysearchtree\v6_binarysearchtree\bstmap2.h
+	"map.h"
+	"BinaryTreeNode.h"
+
+1520449644 c:\users\tinna\onedrive - reykjavik university\háskólinn í reykjavík\tölvunarfræði bsc\20181\t-201-gski gagnaskipan\verkefni\forritunarverkefni 6\v6_binarysearchtree\v6_binarysearchtree\map.h
+	<ostream>
+
+1520449911 c:\users\tinna\onedrive - reykjavik university\háskólinn í reykjavík\tölvunarfræði bsc\20181\t-201-gski gagnaskipan\verkefni\forritunarverkefni 6\v6_binarysearchtree\v6_binarysearchtree\binarytreenode.h
+	<stdio.h>
+

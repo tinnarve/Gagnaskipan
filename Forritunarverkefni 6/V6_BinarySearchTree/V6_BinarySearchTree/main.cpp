@@ -1,6 +1,6 @@
 #include <iostream>
 #include <string>
-#include "BSTMap2.h"
+#include "BSTMap.h"
 
 using namespace std;
 
@@ -106,7 +106,7 @@ void printMap(Map<K, T> *map) {
 
 int main() {
 
-    Map<char, string> *bstMap = new BSTMap2<char, string>();
+    Map<char, string> *bstMap = new BSTMap<char, string>();
 
     testInsert(bstMap, 'd', (string)"item-d");
     testInsert(bstMap, 'b', (string)"item-b");
