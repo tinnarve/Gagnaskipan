@@ -6,7 +6,9 @@ template <class K, class T>
 class BSTMap2
 {
     public:
-        BSTMap2() {}
+        BSTMap2() {
+            // tharf a[ implementa
+        }
         virtual ~BSTMap2() {}
         virtual void insert(K key, T data) {
 
