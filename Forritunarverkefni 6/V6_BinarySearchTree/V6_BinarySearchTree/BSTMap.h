@@ -1,10 +1,13 @@
 #ifndef BSTMAP_H
 #define BSTMAP_H
+#include <iostream>
 #include "map.h"
 #include "BinaryTreeNode.h"
 
+using namespace std;
+
 template <class K, class T>
-class BSTMap
+class BSTMap : public Map<K, T>
 {
     public:
         BSTMap() {
@@ -26,7 +29,13 @@ class BSTMap
         }
 
         virtual void remove(K key) {
-
+            BinaryTreeNode<K, T> *node;
+            key->node;
+            if(node != NULL) {
+                remove(node->left);
+                remove(node->right);
+                delete node;
+            }
         }
 
         virtual bool contains(K key) {
@@ -42,7 +51,8 @@ class BSTMap
         }
 
         virtual void clear() {
-
+            remove(root);
+            root = NULL;
         }
 
         virtual void print(ostream& out) const {
@@ -50,7 +60,7 @@ class BSTMap
         }
 
     private:
-        BinaryTreeNode *root;
+        BinaryTreeNode<K, T> *root;
 };
 
 #endif // BSTMAP_H
