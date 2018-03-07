@@ -1,16 +1,17 @@
 #ifndef BSTMAP_H
 #define BSTMAP_H
 #include "map.h"
+#include "BinaryTreeNode.h"
 
 template <class K, class T>
 class BSTMap
 {
     public:
-        BSTMap2() {
-
+        BSTMap() {
+            root = NULL;
         }
-        virtual ~BSTMap2() {
-
+        virtual ~BSTMap() {
+            clear();
         }
         virtual void insert(K key, T data) {
 
@@ -49,6 +50,7 @@ class BSTMap
         }
 
     private:
+        BinaryTreeNode *root;
 };
 
 #endif // BSTMAP_H
