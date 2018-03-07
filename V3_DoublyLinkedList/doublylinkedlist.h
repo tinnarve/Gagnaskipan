@@ -16,129 +16,112 @@ class DoublyLinkedList {
         DoublyLinkedList() {
 
             size = 0;
+            //make a new instance of head & tail.
             head = new ListNode<T>();
             tail = new ListNode<T>();
 
+            //make sure head and tail point at each other.
             head->next = tail;
             tail->prev = head;
+
+            //make sure the current Node points to tail.
             currNode = tail;
             currentPosition = 0;
         }
 
         ~DoublyLinkedList() {
 
+            //use existing function to delete list.
             clear();
-
+            // delete rest of the pointers.
             delete head;
             delete tail;
         }
 
-        // Clear contents from the list, to make it empty.
-        // Worst-case time complexity: Linear
         void clear() {
-
+            //start clearing the List from the beginning
             currNode = head->next;
 
+            //loop goes through the whole list by making head
+            //point to the node after the first node and then deleting
             while(currNode != tail)
             {
                 head->next = currNode->next;
                 delete currNode;
                 currNode = head->next;
             }
+            //make sure tail points to head.
             tail->prev = head;
             size = 0;
             currentPosition = 0;
         }
 
-        // Insert an element at the current location.
-        // item: The element to be inserted
-        // Worst-case time complexity: Constant
         void insert(const T& item) {
+            //make a new node with an item and the pointers of currNode
+            ListNode<T> *newNode = new ListNode<T>(item, currNode->prev, currNode);
+            //make sure the previous node and currNode now point to the new one.
+            currNode->prev->next = newNode;
+            currNode->prev = newNode;
 
-            if(currentPosition == 0)
-            {
-                ListNode<T> *newNode = new ListNode<T>(item, head, tail);
-                head->next = newNode;
-                tail->prev = newNode;
-            }
-            else
-            {
-                ListNode<T> *newNode = new ListNode<T>(item, currNode->prev, currNode);
-                currNode->prev->next = newNode;
-                currNode->prev = newNode;
-            }
             size++;
             currentPosition++;
         }
 
-        // Append an element at the end of the list.
-        // item: The element to be appended.
-        // Worst-case time complexity: Constant
         void append(const T& item) {
+            //make a new Node with item and tail.
+            ListNode<T> *newNode = new ListNode<T>(item, tail->prev, tail);
+            //make sure the previous node and tail point to the new Node
+            tail->prev->next = newNode;
+            tail->prev = newNode;
 
-            if(size == 0)
-            {
-                ListNode<T> *newNode = new ListNode<T>(item, head, tail);
-                head->next = newNode;
-                tail->prev = newNode;
-            }
-            else
-            {
-                ListNode<T> *newNode = new ListNode<T>(item, tail->prev, tail);
-                tail->prev->next = newNode;
-                tail->prev = newNode;
-                currNode = newNode;
-            }
             size++;
-            currentPosition++;
+            if(currNode == tail)
+            {   //make sure the current position count only gets higher
+                //if currNode points to tail.
+                currentPosition++;
+            }
         }
-
-        // Remove and return the current element.
-        // Return: the element that was removed.
-        // Worst-case time complexity: Constant
-        // Throws InvalidPositionException if current position is
-        // behind the last element
         T remove() {
 
             if(currNode == tail)
-            {
+            {   //can't remove the tail.
                 throw InvalidPositionException();
             }
 
-            T temp;
-            temp = currNode->data;
+            if(currentPosition != 0)
+            {
+                currentPosition--;
+            }
+            //make a template temp to store the data which will be deleted.
+            T returnData = currNode->data;
+            //connect the previous and the next node to each other instead of currNode.
+            currNode->next->prev = currNode->prev;
+            currNode->prev->next = currNode->next;
+            //make sure we don't lose the list when we delete currNode.
+            ListNode<T> *nextCurr = currNode->next;
 
-            ListNode<T> *tempNode = currNode->prev;
-            tempNode->next = currNode->next;
-            currNode->next->prev = tempNode;
             delete currNode;
-            currNode = tempNode->next;
+            //make sure the currNode is now the one after the one we just deleted.
+            currNode = nextCurr;
 
-            currentPosition--;
             size--;
 
-            return temp;
-
+            return returnData;
         }
 
-        // Set the current position to the start of the list
-        // Worst-case time complexity: Constant
         void move_to_start() {
+            //make currNode point to the first node after head (can be tail)
             currNode = head->next;
-            currentPosition = 1;
+            currentPosition = 0;
         }
 
-        // Set the current position to the end of the list
-        // Worst-case time complexity: Constant
         void move_to_end() {
             currNode = tail;
             currentPosition = size;
         }
 
-        // Move the current position one step left. No change
-        // if already at beginning.
-        // Worst-case time complexity: Constant
         void prev() {
+            //while currNode does not point to the first node move it one node back.
             if(currNode != head->next)
             {
                 currNode = currNode->prev;
@@ -146,61 +129,45 @@ class DoublyLinkedList {
             }
         }
 
-        // Move the current position one step right. No change
-        // if already at end.
-        // Worst-case time complexity: Constant
         void next() {
-
-            if(currentPosition != size && currentPosition < 0)
+            //while currNode does not point to the tail move it to the next node
+            if(currNode != tail)
             {
                 currNode = currNode->next;
                 currentPosition++;
             }
         }
 
-        // Return: The number of elements in the list.
-        // Worst-case time complexity: Constant
         int length() const {
 
             return size;
         }
 
-        // Return: The position of the current element.
-        // Worst-case time complexity: Constant
         int curr_pos() const {
 
             return currentPosition;
         }
 
-        // Set current position.
-        // pos: The position to make current.
-        // Worst-case time complexity: Linear
-        // Throws InvalidPositionException if 'pos' is not a valid position
         void move_to_pos(int pos) {
-
-            if(pos >= size)
+            // check if pos is inside the list.
+            if(pos > size || pos < 0)
             {
                 throw InvalidPositionException();
             }
             else
-            {
+            {   // move currNode to pos using a loop.
+                currentPosition = pos;
                 currNode = head->next;
-                for(int i = 1; i < pos; i++)
+                for(int i = 0; i < pos; i++)
                 {
                     currNode = currNode->next;
                 }
-                currentPosition = pos;
             }
-
         }
 
-        // Return: The current element.
-        // Worst-case time complexity: Constant
-        // Throws InvalidPositionException if current position is
-        // behind the last element
         const T& get_value() const {
-            if(currentPosition >= size)
-            {
+            if(currNode == tail)
+            {   //tail has no data.
                 throw InvalidPositionException();
             }
             else
@@ -209,15 +176,13 @@ class DoublyLinkedList {
             }
         }
 
-
-        // Outputs the elements of 'lis' to the stream 'outs', separated
-        // by a single space.
         friend ostream& operator <<(ostream& outs, const DoublyLinkedList& lis) {
 
-            ListNode<T> *tmpNode = lis.head->next;
-            while(tmpNode != lis.tail) {
-                outs << tmpNode->data << " ";
-                tmpNode = tmpNode->next;
+            ListNode<T> *tempNode = lis.head->next;
+            while(tempNode != lis.tail)
+            {
+                outs << tempNode->data << " ";
+                tempNode = tempNode->next;
             }
             return outs;
         }
