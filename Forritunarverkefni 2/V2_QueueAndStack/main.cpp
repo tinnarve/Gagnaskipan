@@ -75,16 +75,17 @@ void clearQueue(Queue &q) {
     cout << endl;
 }
 
+
 int main() {
 
     cout << endl << "STACK" << endl << endl;
-
     Stack s1;
     pushOntoStack(s1, "kari", 79.2);
     pushOntoStack(s1, "beggi", 91.3);
     pushOntoStack(s1, "kalli", 87.6);
     pushOntoStack(s1, "valdi", 117.4);
     pushOntoStack(s1, "anna", 54.2);
+
 
     popOffStack(s1);
     popOffStack(s1);
@@ -96,6 +97,7 @@ int main() {
     cout << endl << "QUEUE" << endl << endl;
 
     Queue q1;
+
     addToQueue(q1, "kari", 79.2);
     addToQueue(q1, "beggi", 91.3);
     addToQueue(q1, "kalli", 87.6);
@@ -129,7 +131,6 @@ int main() {
     addToQueue(q2, "eee", 55.5);
 
     clearQueue(q2);
-
 
     return 0;
 }

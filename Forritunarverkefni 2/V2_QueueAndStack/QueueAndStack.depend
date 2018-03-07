@@ -1,0 +1,55 @@
+# depslib dependency file v1.0
+1517262770 source:c:\users\lenovo\desktop\gagnaskipan\forritunarverkefni 2\v2_queueandstack\main.cpp
+	<iostream>
+	"stack.h"
+	"queue.h"
+
+1517266855 c:\users\lenovo\desktop\gagnaskipan\forritunarverkefni 2\v2_queueandstack\stack.h
+	"measurement.h"
+	"Node.h"
+	<iostream>
+
+1517225265 c:\users\lenovo\desktop\gagnaskipan\forritunarverkefni 2\v2_queueandstack\measurement.h
+	<ostream>
+	<string>
+
+1517263913 c:\users\lenovo\desktop\gagnaskipan\forritunarverkefni 2\v2_queueandstack\node.h
+	"measurement.h"
+
+1517266945 c:\users\lenovo\desktop\gagnaskipan\forritunarverkefni 2\v2_queueandstack\queue.h
+	"measurement.h"
+	"Node.h"
+
+1517266415 source:c:\users\lenovo\desktop\gagnaskipan\forritunarverkefni 2\v2_queueandstack\queue.cpp
+	"queue.h"
+
+1517266544 source:c:\users\lenovo\desktop\gagnaskipan\forritunarverkefni 2\v2_queueandstack\stack.cpp
+	"stack.h"
+
+1517265449 source:c:\users\tinna\documents\gagnaskipan\forritunarverkefni 2\v2_queueandstack\main.cpp
+	<iostream>
+	"stack.h"
+	"queue.h"
+
+1517265449 c:\users\tinna\documents\gagnaskipan\forritunarverkefni 2\v2_queueandstack\stack.h
+	"measurement.h"
+	"Node.h"
+	<iostream>
+
+1517224243 c:\users\tinna\documents\gagnaskipan\forritunarverkefni 2\v2_queueandstack\measurement.h
+	<ostream>
+	<string>
+
+1517265449 c:\users\tinna\documents\gagnaskipan\forritunarverkefni 2\v2_queueandstack\node.h
+	"measurement.h"
+
+1517265449 c:\users\tinna\documents\gagnaskipan\forritunarverkefni 2\v2_queueandstack\queue.h
+	"measurement.h"
+	"Node.h"
+
+1517265449 source:c:\users\tinna\documents\gagnaskipan\forritunarverkefni 2\v2_queueandstack\queue.cpp
+	"queue.h"
+
+1517265449 source:c:\users\tinna\documents\gagnaskipan\forritunarverkefni 2\v2_queueandstack\stack.cpp
+	"stack.h"
+
