@@ -8,40 +8,44 @@ class BSTMap2 : public Map<K, T>
 {
     public:
         BSTMap2() {
+            //make an empty root Node
             root = NULL;
             numItems = 0;
         }
 
         virtual ~BSTMap2() {
-
+            clear();
         }
 
         virtual void insert(K key, T data)
         {
-            /*if(numItems == 0)
-            {
-                root = new BinaryTreeNode<K,T>(key, data);
-                numItems++;
-            }*/
             BinaryTreeNode<K,T>* &node = find(key, root);
             if(node == NULL)
             {
                 node = new BinaryTreeNode<K,T>(key, data);
-            }
-            /*else if(node == NULL){
-                else{
-                BinaryTreeNode<K,T>* node = new BinaryTreeNode<K,T>(key, data, NULL, NULL);
                 numItems++;
-            }*/
+            }
+            else{
+                throw ItemExistsException();
+            }
 
         }
 
         virtual void update(K key, T data) {
-
+            BinaryTreeNode<K,T>* &node = find(key, root);
+            if(node == NULL){
+                throw NotFoundException();
+            }
+            node->data = data;
         }
 
         virtual T get(K key) {
-            return false;
+            BinaryTreeNode<K,T>* &node = find(key, root);
+            if(node == NULL)
+            {
+                throw NotFoundException();
+            }
+            return node->data;
         }
 
         virtual void remove(K key) {
@@ -80,14 +84,34 @@ class BSTMap2 : public Map<K, T>
         }
 
         virtual bool empty() const {
+            if(root == NULL)
+            {
+                return true;
+            }
             return false;
         }
 
         virtual void clear() {
-
+            if(root != NULL)
+            {
+                cleanTree(root);
+                root = NULL;
+                numItems = 0;
+            }
         }
 
-
+        void cleanTree(BinaryTreeNode<K,T> *root)
+        {
+            if(root->left != NULL)
+            {
+                cleanTree(root->left);
+            }
+            if(root->right!=NULL)
+            {
+                cleanTree(root->right);
+            }
+            delete root;
+        }
         virtual void print(ostream& out) const {
             print(root);
         }

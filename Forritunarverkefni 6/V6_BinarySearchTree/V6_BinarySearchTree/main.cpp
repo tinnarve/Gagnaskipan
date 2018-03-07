@@ -115,13 +115,6 @@ int main() {
     testInsert(bstMap, 'c', (string)"item-c");
 
     printMap(bstMap);
-/*    testSize(bstMap);
-
-    testContains(bstMap, 'a');
-    testContains(bstMap, 'b');
-
-    testRemove(bstMap, 'b');
-    testContains(bstMap, 'b');
 
     testEmpty(bstMap);
 
@@ -141,9 +134,9 @@ int main() {
     printMap(bstMap);
     testSize(bstMap);
 
-    testRemove(bstMap, 'c');
-    testRemove(bstMap, 'a');
-    testRemove(bstMap, 'f');
+    //testRemove(bstMap, 'c');
+    //testRemove(bstMap, 'a');
+    //testRemove(bstMap, 'f');
 
     testUpdate(bstMap, 'f', (string)"item-f-updated");
 
@@ -151,15 +144,15 @@ int main() {
     testGet(bstMap, 'f');
     testGet(bstMap, 'e');
 
-    testRemove(bstMap, 'e');
-    testRemove(bstMap, 'g');
+    //testRemove(bstMap, 'e');
+    //testRemove(bstMap, 'g');
 
     testEmpty(bstMap);
 
     printMap(bstMap);
     testSize(bstMap);
 
-    testRemove(bstMap, 'd');
+    //testRemove(bstMap, 'd');
     testEmpty(bstMap);
 
     printMap(bstMap);
@@ -182,5 +175,5 @@ int main() {
     testSize(bstMap);
 
     delete bstMap;
-    bstMap = NULL; */
+    bstMap = NULL;
 }
