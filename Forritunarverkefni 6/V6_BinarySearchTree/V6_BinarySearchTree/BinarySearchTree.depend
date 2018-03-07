@@ -1,0 +1,16 @@
+# depslib dependency file v1.0
+1520454609 source:c:\users\lenovo\desktop\gagnaskipan\forritunarverkefni 6\v6_binarysearchtree\v6_binarysearchtree\main.cpp
+	<iostream>
+	<string>
+	"BSTMap2.h"
+
+1520457430 c:\users\lenovo\desktop\gagnaskipan\forritunarverkefni 6\v6_binarysearchtree\v6_binarysearchtree\bstmap2.h
+	"map.h"
+	"BinaryTreeNode.h"
+
+1520457430 c:\users\lenovo\desktop\gagnaskipan\forritunarverkefni 6\v6_binarysearchtree\v6_binarysearchtree\map.h
+	<ostream>
+
+1520451168 c:\users\lenovo\desktop\gagnaskipan\forritunarverkefni 6\v6_binarysearchtree\v6_binarysearchtree\binarytreenode.h
+	<stdio.h>
+

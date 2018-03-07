@@ -18,14 +18,15 @@ class BSTMap2 : public Map<K, T>
 
         virtual void insert(K key, T data)
         {
-            BinaryTreeNode<K,T>* node = find(key, root);
+            /*BinaryTreeNode<K,T>* node = find(key, root);
             if(node->key != NULL)
             {
                 throw ItemExistsException();
             }
-            else if(node == NULL){
-                node = new BinaryTreeNode<K,T>(key, data);
-            }
+            else if(node == NULL){*/
+                BinaryTreeNode<K,T>* node = new BinaryTreeNode<K,T>(key, data);
+                numItems++;
+            //}
 
         }
 
@@ -78,9 +79,17 @@ class BSTMap2 : public Map<K, T>
         virtual void clear() {
 
         }
+        void inPrint(BinaryTreeNode<K,T>* node) const {
+            if(node != NULL) {
+                print(node->left);
+                cout << node->data << " ";
+                print(node->right);
+            }
+        }
 
-        virtual void print(ostream& out) const {
-
+        virtual void print(BinaryTreeNode<K,T>* node) const {
+            //BinaryTreeNode<K, T>* node;
+            inPrint(root);
         }
 
     private:

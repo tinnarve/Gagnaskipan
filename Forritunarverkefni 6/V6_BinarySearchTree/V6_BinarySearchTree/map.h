@@ -23,7 +23,7 @@ class Map
        // virtual int size() const = 0;
         //virtual bool empty() const = 0;
         //virtual void clear() = 0;
-        //virtual void print(ostream& out) const = 0;
+        virtual void print(ostream& out) const = 0;
 
         ///No need to overload this function in child classes
         friend ostream& operator <<(ostream& out, const Map<K, T>& bm) {
