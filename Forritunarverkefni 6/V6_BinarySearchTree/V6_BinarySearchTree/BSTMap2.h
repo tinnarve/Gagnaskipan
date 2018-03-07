@@ -18,15 +18,21 @@ class BSTMap2 : public Map<K, T>
 
         virtual void insert(K key, T data)
         {
-            /*BinaryTreeNode<K,T>* node = find(key, root);
-            if(node->key != NULL)
+            /*if(numItems == 0)
             {
-                throw ItemExistsException();
-            }
-            else if(node == NULL){*/
-                BinaryTreeNode<K,T>* node = new BinaryTreeNode<K,T>(key, data);
+                root = new BinaryTreeNode<K,T>(key, data);
                 numItems++;
-            //}
+            }*/
+            BinaryTreeNode<K,T>* &node = find(key, root);
+            if(node == NULL)
+            {
+                node = new BinaryTreeNode<K,T>(key, data);
+            }
+            /*else if(node == NULL){
+                else{
+                BinaryTreeNode<K,T>* node = new BinaryTreeNode<K,T>(key, data, NULL, NULL);
+                numItems++;
+            }*/
 
         }
 
@@ -50,10 +56,11 @@ class BSTMap2 : public Map<K, T>
             }
             else{
                 return false;
+                numItems++;
             }
             //return find(k, root) != NULL;
         }
-        BinaryTreeNode<K, T>* find(K key, BinaryTreeNode<K,T>* &node)
+        BinaryTreeNode<K, T>* &find(K key, BinaryTreeNode<K,T>* &node)
         {
             if(node == NULL){
                 return node;
@@ -79,22 +86,23 @@ class BSTMap2 : public Map<K, T>
         virtual void clear() {
 
         }
-        void inPrint(BinaryTreeNode<K,T>* node) const {
+
+
+        virtual void print(ostream& out) const {
+            print(root);
+        }
+
+    private:
+        BinaryTreeNode<K, T> *root;
+        int numItems;
+
+        void print(BinaryTreeNode<K,T>* node) const {
             if(node != NULL) {
                 print(node->left);
                 cout << node->data << " ";
                 print(node->right);
             }
         }
-
-        virtual void print(BinaryTreeNode<K,T>* node) const {
-            //BinaryTreeNode<K, T>* node;
-            inPrint(root);
-        }
-
-    private:
-        BinaryTreeNode<K, T> *root;
-        int numItems;
 };
 
 #endif // BSTMAP2_H

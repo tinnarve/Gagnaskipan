@@ -103,7 +103,6 @@ void printMap(Map<K, T> *map) {
     cout << endl;
 }
 
-
 int main() {
 
     Map<char, string> *bstMap = new BSTMap2<char, string>();
