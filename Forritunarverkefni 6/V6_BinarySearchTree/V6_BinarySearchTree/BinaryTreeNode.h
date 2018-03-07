@@ -14,6 +14,7 @@ class BinaryTreeNode
         T data;
         BinaryTreeNode *left;
         BinaryTreeNode *right;
+
 };
 
 #endif // BINARYTREENODE_H
