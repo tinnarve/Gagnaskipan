@@ -6,7 +6,7 @@ template <class K, class T>
 class BinaryTreeNode
 {
     public:
-        BinaryTreeNode(K key, T data, BinaryTreeNode *left = NULL, BinaryTreeNode *right = NULL)
+        BinaryTreeNode (K key, T data, BinaryTreeNode *left = NULL, BinaryTreeNode *right = NULL)
                       : key(key), data(data), left(left), right(right) {};
         virtual ~BinaryTreeNode() {};
 

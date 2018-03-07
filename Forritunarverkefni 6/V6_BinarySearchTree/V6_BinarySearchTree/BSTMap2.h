@@ -9,6 +9,7 @@ class BSTMap2 : public Map<K, T>
     public:
         BSTMap2() {
             root = NULL;
+            numItems = 0;
         }
 
         virtual ~BSTMap2() {
@@ -17,13 +18,13 @@ class BSTMap2 : public Map<K, T>
 
         virtual void insert(K key, T data)
         {
-            BinaryTreeNode* node = find(key, root);
-            if(node->data != NULL)
+            BinaryTreeNode<K,T>* node = find(key, root);
+            if(node->key != NULL)
             {
                 throw ItemExistsException();
             }
             else if(node == NULL){
-                node = new BinaryTreeNode(key);
+                node = new BinaryTreeNode<K,T>(key, data);
             }
 
         }
@@ -42,7 +43,7 @@ class BSTMap2 : public Map<K, T>
 
         virtual bool contains(K key)
         {
-            BinaryTreeNode* node = find(key, root);
+            BinaryTreeNode<K, T> * node = find(key, root);
             if(node != NULL) {
                 return true;
             }
@@ -51,23 +52,23 @@ class BSTMap2 : public Map<K, T>
             }
             //return find(k, root) != NULL;
         }
-        BinaryTreeNode* find(K key, BinaryTreeNode* &node)
+        BinaryTreeNode<K, T>* find(K key, BinaryTreeNode<K,T>* &node)
         {
             if(node == NULL){
                 return node;
             }
-            if(key < node->data)
+            if(key < node->key)
             {
                 return find(key, node->left);
             }
-            else if(node->data < key){
+            else if(node->key < key){
                 return find(key, node->right);
             }
             return node;
         }
 
         virtual int size() const {
-            return 0;
+            return numItems;
         }
 
         virtual bool empty() const {
@@ -83,7 +84,8 @@ class BSTMap2 : public Map<K, T>
         }
 
     private:
-        BinaryTreeNode *root;
+        BinaryTreeNode<K, T> *root;
+        int numItems;
 };
 
 #endif // BSTMAP2_H
