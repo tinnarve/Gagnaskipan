@@ -2,14 +2,16 @@
 #define BINARYTREENODE_H
 #include <stdio.h>
 
+template <class K, class T>
 class BinaryTreeNode
 {
     public:
-        BinaryTreeNode(char data = '0', BinaryTreeNode *left = NULL, BinaryTreeNode *right = NULL)
-                      : data(data), left(left), right(right) {};
+        BinaryTreeNode(K key, T data, BinaryTreeNode *left = NULL, BinaryTreeNode *right = NULL)
+                      : key(key), data(data), left(left), right(right) {};
         virtual ~BinaryTreeNode() {};
 
-        char data;
+        K key;
+        T data;
         BinaryTreeNode *left;
         BinaryTreeNode *right;
 };
