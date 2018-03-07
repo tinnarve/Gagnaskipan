@@ -24,3 +24,22 @@
 1498258922 c:\kennsla\gagnaskipan\projects\solutions\v6_binarysearchtree\map.h
 	<ostream>
 
+1520448935 source:c:\users\lenovo\desktop\gagnaskipan\forritunarverkefni 6\v6_binarysearchtree\v6_binarysearchtree\main.cpp
+	<iostream>
+	<string>
+	"BSTMap2.h"
+
+1520447846 c:\users\lenovo\desktop\gagnaskipan\forritunarverkefni 6\v6_binarysearchtree\v6_binarysearchtree\bstmap.h
+	"map.h"
+	"BinaryTreeNode.h"
+
+1520449046 c:\users\lenovo\desktop\gagnaskipan\forritunarverkefni 6\v6_binarysearchtree\v6_binarysearchtree\map.h
+	<ostream>
+
+1520447846 c:\users\lenovo\desktop\gagnaskipan\forritunarverkefni 6\v6_binarysearchtree\v6_binarysearchtree\binarytreenode.h
+	<stdio.h>
+
+1520449331 c:\users\lenovo\desktop\gagnaskipan\forritunarverkefni 6\v6_binarysearchtree\v6_binarysearchtree\bstmap2.h
+	"map.h"
+	"BinaryTreeNode.h"
+
