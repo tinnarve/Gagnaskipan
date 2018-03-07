@@ -1,60 +1,16 @@
 # depslib dependency file v1.0
-1492634153 source:c:\kennsla\gagnaskipan\exams\vor2017lokaprof_solutions\binarysearchtree\main.cpp
-	<iostream>
-	"bstset.h"
-
-1492618936 c:\kennsla\gagnaskipan\exams\vor2017lokaprof_solutions\binarysearchtree\bstset.h
-	<ostream>
-	"bstsetnode.h"
-
-1492618854 c:\kennsla\gagnaskipan\exams\vor2017lokaprof_solutions\binarysearchtree\bstsetnode.h
-
-1498259370 source:c:\kennsla\gagnaskipan\projects\solutions\v6_binarysearchtree\main.cpp
-	<iostream>
-	<string>
-	"bstmap.h"
-
-1498258922 c:\kennsla\gagnaskipan\projects\solutions\v6_binarysearchtree\bstmap.h
-	<ostream>
-	"map.h"
-	"bstmapnode.h"
-
-1498231261 c:\kennsla\gagnaskipan\projects\solutions\v6_binarysearchtree\bstmapnode.h
-
-1498258922 c:\kennsla\gagnaskipan\projects\solutions\v6_binarysearchtree\map.h
-	<ostream>
-
-1520448935 source:c:\users\lenovo\desktop\gagnaskipan\forritunarverkefni 6\v6_binarysearchtree\v6_binarysearchtree\main.cpp
+1520454609 source:c:\users\lenovo\desktop\gagnaskipan\forritunarverkefni 6\v6_binarysearchtree\v6_binarysearchtree\main.cpp
 	<iostream>
 	<string>
 	"BSTMap2.h"
 
-1520447846 c:\users\lenovo\desktop\gagnaskipan\forritunarverkefni 6\v6_binarysearchtree\v6_binarysearchtree\bstmap.h
+1520457430 c:\users\lenovo\desktop\gagnaskipan\forritunarverkefni 6\v6_binarysearchtree\v6_binarysearchtree\bstmap2.h
 	"map.h"
 	"BinaryTreeNode.h"
 
-1520449046 c:\users\lenovo\desktop\gagnaskipan\forritunarverkefni 6\v6_binarysearchtree\v6_binarysearchtree\map.h
+1520457430 c:\users\lenovo\desktop\gagnaskipan\forritunarverkefni 6\v6_binarysearchtree\v6_binarysearchtree\map.h
 	<ostream>
 
-1520447846 c:\users\lenovo\desktop\gagnaskipan\forritunarverkefni 6\v6_binarysearchtree\v6_binarysearchtree\binarytreenode.h
-	<stdio.h>
-
-1520449331 c:\users\lenovo\desktop\gagnaskipan\forritunarverkefni 6\v6_binarysearchtree\v6_binarysearchtree\bstmap2.h
-	"map.h"
-	"BinaryTreeNode.h"
-
-1520449644 source:c:\users\tinna\onedrive - reykjavik university\háskólinn í reykjavík\tölvunarfræði bsc\20181\t-201-gski gagnaskipan\verkefni\forritunarverkefni 6\v6_binarysearchtree\v6_binarysearchtree\main.cpp
-	<iostream>
-	<string>
-	"BSTMap2.h"
-
-1520449644 c:\users\tinna\onedrive - reykjavik university\háskólinn í reykjavík\tölvunarfræði bsc\20181\t-201-gski gagnaskipan\verkefni\forritunarverkefni 6\v6_binarysearchtree\v6_binarysearchtree\bstmap2.h
-	"map.h"
-	"BinaryTreeNode.h"
-
-1520449644 c:\users\tinna\onedrive - reykjavik university\háskólinn í reykjavík\tölvunarfræði bsc\20181\t-201-gski gagnaskipan\verkefni\forritunarverkefni 6\v6_binarysearchtree\v6_binarysearchtree\map.h
-	<ostream>
-
-1520449911 c:\users\tinna\onedrive - reykjavik university\háskólinn í reykjavík\tölvunarfræði bsc\20181\t-201-gski gagnaskipan\verkefni\forritunarverkefni 6\v6_binarysearchtree\v6_binarysearchtree\binarytreenode.h
+1520451168 c:\users\lenovo\desktop\gagnaskipan\forritunarverkefni 6\v6_binarysearchtree\v6_binarysearchtree\binarytreenode.h
 	<stdio.h>
 
