@@ -2,7 +2,7 @@
 #define BSTMAP_H
 #include "map.h"
 
-
+template <class K, class T>
 class BSTMap
 {
     public:
