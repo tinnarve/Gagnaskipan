@@ -29,8 +29,7 @@ class BSTMap : public Map<K, T>
         }
 
         virtual void remove(K key) {
-            BinaryTreeNode<K, T> *node;
-            key->node;
+            BinaryTreeNode<K, T>* node = find(key, root);
             if(node != NULL) {
                 remove(node->left);
                 remove(node->right);
@@ -40,6 +39,20 @@ class BSTMap : public Map<K, T>
 
         virtual bool contains(K key) {
 
+        }
+
+        BinaryTreeNode<K, T>* find(K key, BinaryTreeNode<K, T>* &node) {
+            if(node == NULL){
+                return node;
+            }
+            if(key < node->data)
+            {
+                return find(key, node->left);
+            }
+            else if(node->data < key){
+                return find(key, node->right);
+            }
+            return node;
         }
 
         virtual int size() const {
