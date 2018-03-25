@@ -5,12 +5,16 @@
 class KeyDataListNode
 {
     public:
-        KeyDataListNode() {}
+        KeyDataListNode(K key, T data, KeyDataList* next = NULL)
+        : key(key), data(data), next(next) {};
         virtual ~KeyDataListNode() {}
 
     protected:
 
     private:
+        K key;
+
+        KeyDataList* next;
 };
 
 #endif // KEYDATALISTNODE_H
