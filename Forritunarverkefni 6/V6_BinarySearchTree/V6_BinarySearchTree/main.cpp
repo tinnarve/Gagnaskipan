@@ -1,6 +1,6 @@
 #include <iostream>
 #include <string>
-#include "BSTMap2.h"
+#include "bstmap.h"
 
 using namespace std;
 
@@ -103,9 +103,10 @@ void printMap(Map<K, T> *map) {
     cout << endl;
 }
 
+
 int main() {
 
-    Map<char, string> *bstMap = new BSTMap2<char, string>();
+    Map<char, string> *bstMap = new BSTMap<char, string>();
 
     testInsert(bstMap, 'd', (string)"item-d");
     testInsert(bstMap, 'b', (string)"item-b");
@@ -115,6 +116,13 @@ int main() {
     testInsert(bstMap, 'c', (string)"item-c");
 
     printMap(bstMap);
+    testSize(bstMap);
+
+    testContains(bstMap, 'a');
+    testContains(bstMap, 'b');
+
+    testRemove(bstMap, 'b');
+    testContains(bstMap, 'b');
 
     testEmpty(bstMap);
 
@@ -134,9 +142,9 @@ int main() {
     printMap(bstMap);
     testSize(bstMap);
 
-    //testRemove(bstMap, 'c');
-    //testRemove(bstMap, 'a');
-    //testRemove(bstMap, 'f');
+    testRemove(bstMap, 'c');
+    testRemove(bstMap, 'a');
+    testRemove(bstMap, 'f');
 
     testUpdate(bstMap, 'f', (string)"item-f-updated");
 
@@ -144,15 +152,15 @@ int main() {
     testGet(bstMap, 'f');
     testGet(bstMap, 'e');
 
-    //testRemove(bstMap, 'e');
-    //testRemove(bstMap, 'g');
+    testRemove(bstMap, 'e');
+    testRemove(bstMap, 'g');
 
     testEmpty(bstMap);
 
     printMap(bstMap);
     testSize(bstMap);
 
-    //testRemove(bstMap, 'd');
+    testRemove(bstMap, 'd');
     testEmpty(bstMap);
 
     printMap(bstMap);

@@ -1,0 +1,26 @@
+# depslib dependency file v1.0
+1498734712 source:c:\kennsla\gagnaskipan\projects\solutions\v8_hashmap\main.cpp
+	<iostream>
+	<string>
+	"hashmap.h"
+	"hashfunctions.h"
+
+1498735530 c:\kennsla\gagnaskipan\projects\solutions\v8_hashmap\hashmap.h
+	<ostream>
+	"map.h"
+	"keydatalist.h"
+
+1498424086 c:\kennsla\gagnaskipan\projects\solutions\v8_hashmap\map.h
+	<ostream>
+
+1498735215 c:\kennsla\gagnaskipan\projects\solutions\v8_hashmap\keydatalist.h
+	"keydatalistnode.h"
+
+1498560860 c:\kennsla\gagnaskipan\projects\solutions\v8_hashmap\keydatalistnode.h
+
+1498578371 source:c:\kennsla\gagnaskipan\projects\solutions\v8_hashmap\hashfunctions.cpp
+	"hashfunctions.h"
+
+1498578371 c:\kennsla\gagnaskipan\projects\solutions\v8_hashmap\hashfunctions.h
+	<string>
+

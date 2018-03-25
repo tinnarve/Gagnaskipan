@@ -40,7 +40,7 @@ class BSTMap2 : public Map<K, T>
         }
 
         virtual T get(K key) {
-            BinaryTreeNode<K,T>* &node = find(key, root);
+            BinaryTreeNode<K,T>* node = find(key, root);
             if(node == NULL)
             {
                 throw NotFoundException();
@@ -49,7 +49,47 @@ class BSTMap2 : public Map<K, T>
         }
 
         virtual void remove(K key) {
+           BinaryTreeNode<K, T>* &node = find(key, root);
+            /*if(node != NULL) {
+                //remove(node->left);
+                //remove(node->right);
+                delete node;
+            }*/
+            if(node == NULL) {
+                    throw NotFoundException();
+            }
+            nodeRemove(node);
+            numItems--;
+        }
 
+        void nodeRemove(BinaryTreeNode<K, T>* &node) {
+            if(node->left == NULL && node->right == NULL) {
+                delete node;
+                node = NULL;
+            }
+            else if(node->right == NULL) {
+                BinaryTreeNode<K, T>* tmp = node;
+                node = node->left;
+                delete tmp;
+            }
+            else if(node->left == NULL) {
+                BinaryTreeNode<K, T>* tmp = node;
+                node = node->right;
+                delete tmp;
+            }
+            else {
+               BinaryTreeNode<K,T>* &nodeForDeletion = findRightMostNode(node->left);
+               node->key = nodeForDeletion->key;
+               node->data = nodeForDeletion->data;
+               nodeRemove(nodeForDeletion);
+            }
+        }
+
+        BinaryTreeNode<K, T>* &findRightMostNode(BinaryTreeNode<K, T>* &node) {
+            if (node->right == NULL) {
+                return node;
+            }
+            return findRightMostNode(node->right);
         }
 
         virtual bool contains(K key)
