@@ -1,20 +1,22 @@
 #ifndef KEYDATALISTNODE_H
 #define KEYDATALISTNODE_H
 
+using namespace std;
 
+template <class K, class T>
 class KeyDataListNode
 {
     public:
-        KeyDataListNode(K key, T data, KeyDataList* next = NULL)
-        : key(key), data(data), next(next) {};
-        virtual ~KeyDataListNode() {}
+        KeyDataListNode(K key, T data, KeyDataListNode* next = NULL)
+            : key(key), data(data), next(next) {};
+        virtual ~KeyDataListNode() {};
 
     protected:
 
     private:
         K key;
-
-        KeyDataList* next;
+        T data;
+        KeyDataListNode* next;
 };
 
 #endif // KEYDATALISTNODE_H

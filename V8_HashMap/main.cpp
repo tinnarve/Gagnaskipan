@@ -1,7 +1,7 @@
 #include <iostream>
 #include <string>
 
-#include "hashmap.h"
+#include "keydatalist.h"
 #include "hashfunctions.h"
 
 using namespace std;
@@ -31,6 +31,7 @@ void testUpdate(Map<K, T> *map, K key, T data) {
     }
     cout << endl;
 }
+
 
 template <class K, class T>
 void testGet(Map<K, T> *map, K key) {
@@ -221,4 +222,4 @@ int main() {
     delete stringHashMap;
     stringHashMap = NULL;
 
-}
+};
