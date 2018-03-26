@@ -2,6 +2,7 @@
 #include <string>
 
 #include "keydatalist.h"
+//#include "map.h"
 #include "hashfunctions.h"
 
 using namespace std;
@@ -109,7 +110,7 @@ void printMap(Map<K, T> *map) {
 
 
 int main() {
-
+/*
     Map<char, string> *charHashMap = new HashMap<char, string>(char_hash);
 
     testInsert(charHashMap, 'd', (string)"item-d");
@@ -221,5 +222,5 @@ int main() {
 
     delete stringHashMap;
     stringHashMap = NULL;
-
+*/
 };

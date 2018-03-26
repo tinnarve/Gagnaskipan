@@ -1,8 +1,6 @@
 #ifndef KEYDATALIST_H
 #define KEYDATALIST_H
 
-using namespace std;
-
 #include "map.h"
 #include "keydatalistnode.h"
 
@@ -11,11 +9,12 @@ class KeyDataList : public Map<K, T>
 {
     public:
         KeyDataList() {
-            first = last;
+            first = NULL;
+            last = NULL;
             numItems = 0;
         }
         virtual ~KeyDataList() {
-            clear();
+            //clear();
         }
 
         void insert(K key, T data)
@@ -23,27 +22,36 @@ class KeyDataList : public Map<K, T>
             ///Add the data data with the key key .
             ///If there is already an item with the key key in the map,
             ///throw ItemExistsException .
-            if(first == NULL)
+            node = find(key);
+            if(node == NULL)
             {
-                first->next = new KeyDataListNode<K, T>(key, data, NULL);
-                first = last;
+                if(first == NULL)
+                {
+                    first->next = new KeyDataListNode<K, T>(key, data, NULL);
+                    last = first->next;
+                }
+                else
+                {
+                    KeyDataListNode<K, T> *newNode = new KeyDataListNode<K, T>(key, data, NULL);
+                    last->next = newNode;
+                    last = newNode;
+                }
+
+                numItems++;
             }
             else
             {
-                KeyDataListNode<K, T> *newNode = new KeyDataListNode<K, T>(key, data, NULL);
-                last->next = newNode;
-                last = newNode;
+                throw ItemExistsException();
             }
-            numItem++;
         }
 
         void update(K key, T data)
         {
             ///Updates the data connected to the key key so they are now data .
             ///If no item with the key key is found in the map, throw NotFoundException .
-            curr = find(key);
+            node = find(key);
 
-            if(key = node->key)
+            if(key == node->key)
             {
                 node.data = data;
             }
@@ -59,7 +67,7 @@ class KeyDataList : public Map<K, T>
             ///If no item with the key key is found in the map, throw NotFoundException
             node = find(key);
 
-            if(key = node->key)
+            if(key == node->key)
             {
                 return node.data;
             }
@@ -78,6 +86,7 @@ class KeyDataList : public Map<K, T>
             {
                 node = node->next ;
             }
+
             if(node->next->key == key)
             {
                 KeyDataListNode<K, T> *temp = node->next->next;
@@ -122,7 +131,7 @@ class KeyDataList : public Map<K, T>
             node = first;
             KeyDataListNode<K, T> *temp;
 
-            while((node->next != NULL)
+            while(node->next != NULL)
             {
                 temp = node->next->next;
                 delete node->next;
@@ -134,7 +143,7 @@ class KeyDataList : public Map<K, T>
 
         void print(ostream& out)
         {
-            node = first
+            node = first;
             while(node->next != NULL)
             {
                 cout << node << endl;
@@ -155,7 +164,7 @@ class KeyDataList : public Map<K, T>
                 }
 
             node = NULL;
-            return curr;
+            return node;
         }
 
     protected:
