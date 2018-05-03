@@ -30,18 +30,22 @@
 1522076741 c:\users\lenovo\desktop\gagnaskipan\v8_hashmap\hashfunctions.h
 	<string>
 
-1522079400 source:c:\users\lenovo\desktop\gagnaskipan\v8_hashmap\main.cpp
+1522094257 source:c:\users\lenovo\desktop\gagnaskipan\v8_hashmap\main.cpp
 	<iostream>
 	<string>
-	"keydatalist.h"
+	"hashmap.h"
 	"hashfunctions.h"
 
 1522009352 c:\users\lenovo\desktop\gagnaskipan\v8_hashmap\map.h
 	<ostream>
 
-1522079775 c:\users\lenovo\desktop\gagnaskipan\v8_hashmap\keydatalist.h
-	"map.h"
+1522094571 c:\users\lenovo\desktop\gagnaskipan\v8_hashmap\keydatalist.h
 	"keydatalistnode.h"
+	"map.h"
 
-1522077358 c:\users\lenovo\desktop\gagnaskipan\v8_hashmap\keydatalistnode.h
+1522092886 c:\users\lenovo\desktop\gagnaskipan\v8_hashmap\keydatalistnode.h
+
+1522094557 c:\users\lenovo\desktop\gagnaskipan\v8_hashmap\hashmap.h
+	"keydatalist.h"
+	"map.h"
 

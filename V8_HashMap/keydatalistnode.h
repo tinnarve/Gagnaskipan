@@ -11,12 +11,10 @@ class KeyDataListNode
             : key(key), data(data), next(next) {};
         virtual ~KeyDataListNode() {};
 
-    protected:
-
-    private:
         K key;
         T data;
         KeyDataListNode* next;
+
 };
 
 #endif // KEYDATALISTNODE_H

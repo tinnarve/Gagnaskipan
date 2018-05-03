@@ -35,6 +35,7 @@
 		<Unit filename="hashfunctions.h">
 			<Option target="&lt;{~None~}&gt;" />
 		</Unit>
+		<Unit filename="hashmap.h" />
 		<Unit filename="keydatalist.h" />
 		<Unit filename="keydatalistnode.h" />
 		<Unit filename="main.cpp" />

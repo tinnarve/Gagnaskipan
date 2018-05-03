@@ -1,8 +1,7 @@
 #include <iostream>
 #include <string>
 
-#include "keydatalist.h"
-//#include "map.h"
+#include "hashmap.h"
 #include "hashfunctions.h"
 
 using namespace std;
@@ -110,11 +109,14 @@ void printMap(Map<K, T> *map) {
 
 
 int main() {
-/*
+
     Map<char, string> *charHashMap = new HashMap<char, string>(char_hash);
 
     testInsert(charHashMap, 'd', (string)"item-d");
-    testInsert(charHashMap, 'b', (string)"item-b");
+    //testContains(charHashMap, 'd');
+    printMap(charHashMap);
+/*    testInsert(charHashMap, 'b', (string)"item-b");
+    printMap(charHashMap);
     testInsert(charHashMap, 'f', (string)"item-f");
     testInsert(charHashMap, 'g', (string)"item-g");
     testInsert(charHashMap, 'e', (string)"item-e");
